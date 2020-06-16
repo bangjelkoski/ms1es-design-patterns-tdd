@@ -6,14 +6,14 @@
  * call (`new` operator). Subclasses can override this method to change the class of objects that will be created.
  */
 export abstract class Creator {
-  public abstract factoryMethod(): any;
+  public abstract factoryMethod(): Product;
 
   otherMethod(): void {}
 }
 
 export class ConcreteCreator extends Creator {
-  public factoryMethod(): any {
-    return {};
+  public factoryMethod(): Product {
+    return new ConcreteProduct();
   }
 }
 
