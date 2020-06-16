@@ -10,3 +10,9 @@ export abstract class Creator {
 
   otherMethod(): void {}
 }
+
+export class ConcreteCreator extends Creator {
+  public factoryMethod(): any {
+    return {};
+  }
+}
