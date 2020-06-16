@@ -4,7 +4,7 @@ describe('Factory Implementation using TDD', () => {
   });
 
   test('the Abstract Creator class should have a abstract factoryMethod', () => {
-    const isAbstractCreator = (object: any): object is AbstractCreator => {
+    const isCreator = (object: any): object is Creator => {
       return 'factoryMethod' in object;
     };
 
@@ -12,11 +12,11 @@ describe('Factory Implementation using TDD', () => {
       factoryMethod(): any {},
     };
 
-    expect(isAbstractCreator(object)).toBe(true);
+    expect(isCreator(object)).toBe(true);
   });
 
   test('the Abstract Creator class can have a other functionalities as well', () => {
-    const isAbstractCreator = (object: any): object is AbstractCreator => {
+    const isCreator = (object: any): object is Creator => {
       return 'factoryMethod' in object && 'otherMethod' in object;
     };
 
@@ -25,7 +25,7 @@ describe('Factory Implementation using TDD', () => {
       otherMethod(): any {},
     };
 
-    expect(isAbstractCreator(object)).toBe(true);
+    expect(isCreator(object)).toBe(true);
   });
 
   test('there should be an Concrete Creator class that implements the Abstract Creator class', () => {
@@ -55,7 +55,7 @@ describe('Factory Implementation using TDD', () => {
   });
 
   test('the Product interface should implement some simple method', () => {
-    const isAbstractProduct = (object: any): object is AbstractProduct => {
+    const isProduct = (object: any): object is Product => {
       return 'operation' in object;
     };
 
@@ -63,7 +63,7 @@ describe('Factory Implementation using TDD', () => {
       operation(): any {},
     };
 
-    expect(isAbstractProduct(object)).toBe(true);
+    expect(isProduct(object)).toBe(true);
   });
 
   test('there should be a Concrete Product class that implements the Product Interface', () => {
