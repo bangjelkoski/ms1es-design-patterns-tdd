@@ -6,3 +6,6 @@
  * objects and decorators follow the same interface.
  * The resulting object will get a stacking behavior of all wrappers.
  */
+export interface Component {
+  operation(): string;
+}
