@@ -9,3 +9,9 @@
 export interface Target {
   call(): string;
 }
+
+export class Adaptee {
+  public callFromAdaptee(): string {
+    return 'ms1es';
+  }
+}
