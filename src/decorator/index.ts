@@ -12,6 +12,28 @@ export interface Component {
 
 export class ConcreteComponent implements Component {
   public operation(): string {
-    return 'ms1pki';
+    return 'ms1es';
+  }
+}
+
+export class Decorator implements Component {
+  private component: Component;
+
+  constructor(component: Component) {
+    this.component = component;
+  }
+
+  public operation(): string {
+    return this.component.operation();
+  }
+}
+
+export class ConcreteDecorator extends Decorator {
+  constructor(component: Component) {
+    super(component);
+  }
+
+  public operation(): string {
+    return `etf-${super.operation()}`;
   }
 }
