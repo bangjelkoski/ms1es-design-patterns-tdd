@@ -20,3 +20,9 @@ export class ConcreteCreator extends Creator {
 export interface Product {
   operation(): string;
 }
+
+export class ConcreteProduct implements Product {
+  public operation(): string {
+    return 'ms1es';
+  }
+}
