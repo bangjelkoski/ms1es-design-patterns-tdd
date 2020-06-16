@@ -9,3 +9,9 @@
 export interface Subject {
   operation(): string;
 }
+
+export class RealSubject implements Subject {
+  public operation(): string {
+    return 'ms1es';
+  }
+}
