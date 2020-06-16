@@ -7,4 +7,6 @@
  */
 export abstract class Creator {
   public abstract factoryMethod(): any;
+
+  otherMethod(): void {}
 }
