@@ -21,3 +21,7 @@ export class Context {
     return this.strategy.operation(...args);
   }
 }
+
+export interface Strategy {
+  operation(args: any): any;
+}
