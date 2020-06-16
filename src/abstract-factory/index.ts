@@ -7,3 +7,7 @@ export class ConcreteFactory implements AbstractFactory {
     return {};
   }
 }
+
+export interface AbstractProduct {
+  usefulMethod(): any;
+}
