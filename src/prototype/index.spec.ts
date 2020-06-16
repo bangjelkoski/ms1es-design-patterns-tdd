@@ -1,4 +1,4 @@
-import { Prototype } from './index';
+import { Prototype, ConcretePrototype } from './index';
 
 describe('Prototype Implementation using TDD', () => {
   test('there should be an Prototype interface', () => {
@@ -57,6 +57,7 @@ describe('Prototype Implementation using TDD', () => {
     const concretePrototypeClone = concretePrototype.clone();
 
     expect(concretePrototype).toEqual(concretePrototypeClone);
+    expect(concretePrototype.id).toEqual('ms1es');
     expect(concretePrototype.id).toEqual(concretePrototypeClone.id);
   });
 });

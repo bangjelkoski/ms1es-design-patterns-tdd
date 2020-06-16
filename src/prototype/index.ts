@@ -6,3 +6,11 @@ export interface Prototype {
   id: string;
   clone(): Prototype;
 }
+
+export class ConcretePrototype implements Prototype {
+  id = 'ms1es';
+
+  clone(): Prototype {
+    return new ConcretePrototype();
+  }
+}
