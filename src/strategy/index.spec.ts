@@ -1,3 +1,5 @@
+import { Context } from './index';
+
 describe('Strategy Implementation using TDD', () => {
   test('there should be an Context class', () => {
     //

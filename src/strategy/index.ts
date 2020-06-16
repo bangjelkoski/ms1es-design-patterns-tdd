@@ -6,3 +6,18 @@
  * In order to change the way the context performs its work, other
  * objects may replace the currently linked strategy object with another one.
  */
+export class Context {
+  private strategy;
+
+  constructor(strategy) {
+    this.strategy = strategy;
+  }
+
+  public setStrategy(strategy) {
+    this.strategy = strategy;
+  }
+
+  public operation(...args): any {
+    return this.strategy.operation(...args);
+  }
+}
