@@ -16,3 +16,7 @@ export class ConcreteCreator extends Creator {
     return {};
   }
 }
+
+export interface Product {
+  operation(): string;
+}
