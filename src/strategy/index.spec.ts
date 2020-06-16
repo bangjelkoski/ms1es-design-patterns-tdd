@@ -88,15 +88,18 @@ describe('Strategy Implementation using TDD', () => {
   });
 
   test('it shows sorted array sorted in ascending order if we use the first ConcreteStrategy or descending if we use the second ConcreteStrategy', () => {
-    const concreteStrategy1 = new ConcreteStrategy2();
+    const concreteStrategy1 = new ConcreteStrategy1();
     const concreteStrategy2 = new ConcreteStrategy2();
     const context = new Context(concreteStrategy1);
 
     const numbers = [1, 5, 8, 3, 2, 15, 22];
 
-    expect(context.operation(numbers).toEqual([1, 2, 3, 5, 8, 15, 22]));
+    const strategy1Result = context.operation(numbers);
+    expect(strategy1Result).toEqual([1, 2, 3, 5, 8, 15, 22]);
 
     context.setStrategy(concreteStrategy2);
-    expect(context.operation(numbers).toEqual([22, 15, 8, 5, 3, 2, 1]));
+
+    const strategy2Result = context.operation(numbers);
+    expect(strategy2Result).toEqual([22, 15, 8, 5, 3, 2, 1]);
   });
 });

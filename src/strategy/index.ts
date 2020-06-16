@@ -7,33 +7,37 @@
  * objects may replace the currently linked strategy object with another one.
  */
 export class Context {
-  private strategy;
+  private strategy: Strategy;
 
-  constructor(strategy) {
+  constructor(strategy: Strategy) {
     this.strategy = strategy;
   }
 
-  public setStrategy(strategy) {
+  public setStrategy(strategy: Strategy) {
     this.strategy = strategy;
   }
 
-  public operation(...args): any {
-    return this.strategy.operation(...args);
+  public operation(numbers: any): any {
+    return this.strategy.operation(numbers);
   }
 }
 
 export interface Strategy {
-  operation(args: any): any;
+  operation(numbers: any): any;
 }
 
 export class ConcreteStrategy1 implements Strategy {
   public operation(numbers: any): any {
-    return numbers.sort((a: number, b: number) => a - b);
+    return [...numbers].sort(function (a: number, b: number) {
+      return a > b ? 1 : -1;
+    });
   }
 }
 
 export class ConcreteStrategy2 implements Strategy {
   public operation(numbers: any): any {
-    return numbers.sort((a: number, b: number) => b - a);
+    return numbers.sort(function (a: number, b: number) {
+      return a < b ? 1 : -1;
+    });
   }
 }
