@@ -58,7 +58,7 @@ describe('Abstract Factory Implementation using TDD', () => {
 
   test('there should be an ConcreteProduct class that implements the AbstractProduct', () => {});
 
-  test('the ConcreteFactory should have a method that returns something [a string for example]', () => {
+  test('the ConcreteProduct should have a method that returns something [a string for example]', () => {
     const concreteProduct = new ConcreteProduct();
 
     const isConcreteProduct = (object: any): object is ConcreteProduct => {
@@ -70,6 +70,22 @@ describe('Abstract Factory Implementation using TDD', () => {
     };
 
     expect(isConcreteProduct(object)).toBe(true);
+
+    const result = concreteProduct.usefulMethod();
+
+    expect(result).toEqual('ms1es');
+  });
+
+  test('the ConcreteFactory should return a instance of ConcreteProduct when calling the createProduct method', () => {
+    const concreteFactory = new ConcreteFactory();
+    const concreteProduct = concreteFactory.createProduct();
+
+    expect(concreteProduct).toBeInstanceOf(ConcreteProduct);
+  });
+
+  test('it should return ms1es after creating a concreteProduct instance from the ConcreteFactory class', () => {
+    const concreteFactory = new ConcreteFactory();
+    const concreteProduct = concreteFactory.createProduct();
 
     const result = concreteProduct.usefulMethod();
 
