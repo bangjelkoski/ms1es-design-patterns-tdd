@@ -1,4 +1,4 @@
-import { Target, Adaptee } from './index';
+import { Target, Adaptee, Adapter } from './index';
 
 describe('Adapter Implementation using TDD', () => {
   test('there should be an Target class', () => {
@@ -49,6 +49,6 @@ describe('Adapter Implementation using TDD', () => {
     const adaptee = new Adaptee();
     const adapter = new Adapter(adaptee);
 
-    expect(adapter.callFrom()).toEqual(adaptee.callFromAdaptee());
+    expect(adapter.call()).toEqual(adaptee.callFromAdaptee());
   });
 });

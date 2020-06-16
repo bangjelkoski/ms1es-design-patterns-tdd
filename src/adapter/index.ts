@@ -15,3 +15,15 @@ export class Adaptee {
     return 'ms1es';
   }
 }
+
+export class Adapter implements Target {
+  private adaptee: Adaptee;
+
+  constructor(adaptee: Adaptee) {
+    this.adaptee = adaptee;
+  }
+
+  public call(): string {
+    return this.adaptee.callFromAdaptee();
+  }
+}
