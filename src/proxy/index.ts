@@ -15,3 +15,30 @@ export class RealSubject implements Subject {
     return 'ms1es';
   }
 }
+
+export class Proxy implements Subject {
+  private realSubject: RealSubject;
+  private permissions: boolean = true;
+
+  constructor(realSubject: RealSubject) {
+    this.realSubject = realSubject;
+  }
+
+  public operation(): string {
+    if (this.hasPermissions()) {
+      return this.realSubject.operation();
+    }
+
+    return 'etf-ms1es';
+  }
+
+  public setPermissions(permission) {
+    this.permissions = permission;
+
+    return this;
+  }
+
+  private hasPermissions(): boolean {
+    return this.permissions;
+  }
+}

@@ -1,4 +1,4 @@
-import { Subject, RealSubject } from './index';
+import { Subject, RealSubject, Proxy } from './index';
 
 describe('Proxy Implementation using TDD', () => {
   test('there should be an Subject interface', () => {
@@ -68,16 +68,17 @@ describe('Proxy Implementation using TDD', () => {
   });
 
   test("the Proxy should wrap the realSubject's operation method around some special logic that may or may not call the realSubject's operation method", () => {
-    const proxy = new Proxy();
     const realSubject = new RealSubject();
+    const proxy = new Proxy(realSubject);
 
     const resultFromProxy = proxy.operation();
-    const resultFromRealSubject = realSubject.proxy();
+    const resultFromRealSubject = realSubject.operation();
     expect(resultFromProxy).toEqual(resultFromRealSubject);
 
     const resultFromProxyAfterModification = proxy
       .setPermissions(false)
       .operation();
-    expect(resultFromProxy).not.toEqual(resultFromRealSubject);
+    expect(resultFromProxyAfterModification).not.toEqual(resultFromRealSubject);
+    expect(resultFromProxyAfterModification).toEqual('etf-ms1es');
   });
 });
