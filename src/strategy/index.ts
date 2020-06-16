@@ -25,3 +25,15 @@ export class Context {
 export interface Strategy {
   operation(args: any): any;
 }
+
+export class ConcreteStrategy1 implements Strategy {
+  public operation(numbers: any): any {
+    return numbers.sort((a: number, b: number) => a - b);
+  }
+}
+
+export class ConcreteStrategy2 implements Strategy {
+  public operation(numbers: any): any {
+    return numbers.sort((a: number, b: number) => b - a);
+  }
+}

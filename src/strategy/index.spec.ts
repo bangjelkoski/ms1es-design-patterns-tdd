@@ -1,4 +1,9 @@
-import { Context, Strategy } from './index';
+import {
+  Context,
+  Strategy,
+  ConcreteStrategy1,
+  ConcreteStrategy2,
+} from './index';
 
 describe('Strategy Implementation using TDD', () => {
   test('there should be an Context class', () => {
@@ -55,7 +60,7 @@ describe('Strategy Implementation using TDD', () => {
 
     expect(isConcreteStrategy(object)).toBe(true);
 
-    const result = concreteStrategy.operation();
+    const result = concreteStrategy.operation([1]);
 
     expect(result).toBeDefined();
   });
@@ -77,7 +82,7 @@ describe('Strategy Implementation using TDD', () => {
 
     expect(isConcreteStrategy(object)).toBe(true);
 
-    const result = concreteStrategy.operation();
+    const result = concreteStrategy.operation([1]);
 
     expect(result).toBeDefined();
   });
