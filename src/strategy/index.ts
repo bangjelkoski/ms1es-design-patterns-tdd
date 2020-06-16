@@ -36,7 +36,7 @@ export class ConcreteStrategy1 implements Strategy {
 
 export class ConcreteStrategy2 implements Strategy {
   public operation(numbers: any): any {
-    return numbers.sort(function (a: number, b: number) {
+    return [...numbers].sort(function (a: number, b: number) {
       return a < b ? 1 : -1;
     });
   }
