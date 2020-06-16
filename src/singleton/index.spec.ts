@@ -1,3 +1,5 @@
+import { Singleton } from './index';
+
 describe('Abstract Factory Implementation using TDD', () => {
   test('there should be a Singleton class', () => {
     //
