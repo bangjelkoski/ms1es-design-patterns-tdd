@@ -1,0 +1,103 @@
+describe('Factory Implementation using TDD', () => {
+  test('there should be an Abstract Creator class', () => {
+    //
+  });
+
+  test('the Abstract Creator class should have a abstract factoryMethod', () => {
+    const isAbstractCreator = (object: any): object is AbstractCreator => {
+      return 'factoryMethod' in object;
+    };
+
+    const object = {
+      factoryMethod(): any {},
+    };
+
+    expect(isAbstractCreator(object)).toBe(true);
+  });
+
+  test('the Abstract Creator class can have a other functionalities as well', () => {
+    const isAbstractCreator = (object: any): object is AbstractCreator => {
+      return 'factoryMethod' in object && 'otherMethod' in object;
+    };
+
+    const object = {
+      factoryMethod(): any {},
+      otherMethod(): any {},
+    };
+
+    expect(isAbstractCreator(object)).toBe(true);
+  });
+
+  test('there should be an Concrete Creator class that implements the Abstract Creator class', () => {
+    //
+  });
+
+  test('the Concrete Creator class that should implement at least the abstract factoryMethod', () => {
+    const concreteCreator = new ConcreteCreator();
+
+    const isConcreteCreator = (object: any): object is ConcreteCreator => {
+      return 'factoryMethod' in object;
+    };
+
+    const object = {
+      factoryMethod(): any {},
+    };
+
+    expect(isConcreteCreator(object)).toBe(true);
+
+    const concreteProduct = concreteCreator.factoryMethod();
+
+    expect(concreteProduct).toBeDefined();
+  });
+
+  test('there should be a Product interface', () => {
+    //
+  });
+
+  test('the Product interface should implement some simple method', () => {
+    const isAbstractProduct = (object: any): object is AbstractProduct => {
+      return 'operation' in object;
+    };
+
+    const object = {
+      operation(): any {},
+    };
+
+    expect(isAbstractProduct(object)).toBe(true);
+  });
+
+  test('there should be a Concrete Product class that implements the Product Interface', () => {
+    const isConcreteProduct = (object: any): object is ConcreteProduct => {
+      return 'operation' in object;
+    };
+
+    const object = {
+      operation(): any {},
+    };
+
+    expect(isConcreteProduct(object)).toBe(true);
+  });
+
+  test('the Concrete Product class should return ms1es when calling its simple method', () => {
+    const concreteProduct = new ConcreteProduct();
+    const result = concreteProduct.operation();
+
+    expect(result).toEqual('ms1es');
+  });
+
+  test('the Concrete Creator class factoryMethod should return a ConcreteProduct instance', () => {
+    const concreteCreator = new ConcreteCreator();
+    const concreteProduct = concreteCreator.factoryMethod();
+
+    expect(concreteProduct).toBeInstanceOf(ConcreteProduct);
+  });
+
+  test('it should return ms1pki after we make a Concrete Creator instance and get a Concrete Product instance using the factoryMethod on the Concrete Creator class', () => {
+    const concreteCreator = new ConcreteCreator();
+    const concreteProduct = concreteCreator.factoryMethod();
+
+    const result = concreteProduct.operation();
+
+    expect(result).toEqual('ms1es');
+  });
+});
