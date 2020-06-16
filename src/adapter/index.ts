@@ -6,3 +6,6 @@
  * It catches calls for one object and transforms them to format and
  * interface recognizable by the second object.
  */
+export interface Target {
+  call(): string;
+}

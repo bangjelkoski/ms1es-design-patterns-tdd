@@ -1,3 +1,5 @@
+import { Target } from './index';
+
 describe('Adapter Implementation using TDD', () => {
   test('there should be an Target class', () => {
     //
