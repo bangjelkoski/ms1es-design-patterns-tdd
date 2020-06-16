@@ -1,10 +1,10 @@
 export interface AbstractFactory {
-  createProduct(): any;
+  createProduct(): ConcreteProduct;
 }
 
 export class ConcreteFactory implements AbstractFactory {
-  public createProduct(): any {
-    return {};
+  public createProduct(): ConcreteProduct {
+    return new ConcreteProduct();
   }
 }
 
