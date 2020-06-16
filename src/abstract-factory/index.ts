@@ -9,5 +9,11 @@ export class ConcreteFactory implements AbstractFactory {
 }
 
 export interface AbstractProduct {
-  usefulMethod(): any;
+  usefulMethod(): string;
+}
+
+export class ConcreteProduct implements AbstractProduct {
+  public usefulMethod(): string {
+    return 'ms1es';
+  }
 }
