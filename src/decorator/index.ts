@@ -9,3 +9,9 @@
 export interface Component {
   operation(): string;
 }
+
+export class ConcreteComponent implements Component {
+  public operation(): string {
+    return 'ms1pki';
+  }
+}

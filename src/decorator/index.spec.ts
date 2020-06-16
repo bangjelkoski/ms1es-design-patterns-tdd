@@ -1,4 +1,4 @@
-import { Component } from './index';
+import { Component, ConcreteComponent } from './index';
 
 describe('Decorator Implementation using TDD', () => {
   test('there should be a Component interface', () => {
