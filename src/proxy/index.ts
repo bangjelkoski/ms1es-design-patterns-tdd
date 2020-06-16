@@ -6,3 +6,6 @@
  * The proxy object has the same interface as a service,
  * which makes it interchangeable with a real object when passed to a client.
  */
+export interface Subject {
+  operation(): string;
+}

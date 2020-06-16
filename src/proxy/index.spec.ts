@@ -1,3 +1,5 @@
+import { Subject } from './index';
+
 describe('Proxy Implementation using TDD', () => {
   test('there should be an Subject interface', () => {
     //
