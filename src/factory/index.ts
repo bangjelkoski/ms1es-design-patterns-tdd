@@ -5,3 +5,6 @@
  * Factory Method defines a method, which should be used for creating objects instead of direct constructor
  * call (`new` operator). Subclasses can override this method to change the class of objects that will be created.
  */
+export abstract class Creator {
+  public abstract factoryMethod(): any;
+}

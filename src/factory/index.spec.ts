@@ -1,3 +1,5 @@
+import { Creator } from './index';
+
 describe('Factory Implementation using TDD', () => {
   test('there should be an Creator class', () => {
     //
