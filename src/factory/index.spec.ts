@@ -1,9 +1,9 @@
 describe('Factory Implementation using TDD', () => {
-  test('there should be an Abstract Creator class', () => {
+  test('there should be an Creator class', () => {
     //
   });
 
-  test('the Abstract Creator class should have a abstract factoryMethod', () => {
+  test('the Creator class should have a abstract factoryMethod', () => {
     const isCreator = (object: any): object is Creator => {
       return 'factoryMethod' in object;
     };
@@ -15,7 +15,7 @@ describe('Factory Implementation using TDD', () => {
     expect(isCreator(object)).toBe(true);
   });
 
-  test('the Abstract Creator class can have a other functionalities as well', () => {
+  test('the Creator class can have a other functionalities as well', () => {
     const isCreator = (object: any): object is Creator => {
       return 'factoryMethod' in object && 'otherMethod' in object;
     };
@@ -28,7 +28,7 @@ describe('Factory Implementation using TDD', () => {
     expect(isCreator(object)).toBe(true);
   });
 
-  test('there should be an Concrete Creator class that implements the Abstract Creator class', () => {
+  test('there should be an Concrete Creator class that implements the Creator class', () => {
     //
   });
 
