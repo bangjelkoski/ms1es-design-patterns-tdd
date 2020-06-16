@@ -1,4 +1,9 @@
-import { AbstractFactory, ConcreteFactory, AbstractProduct } from './index';
+import {
+  AbstractFactory,
+  ConcreteFactory,
+  AbstractProduct,
+  ConcreteProduct,
+} from './index';
 
 describe('Abstract Factory Implementation using TDD', () => {
   test('there should be an AbstractFactory interface', () => {
@@ -49,5 +54,25 @@ describe('Abstract Factory Implementation using TDD', () => {
     };
 
     expect(isAbstractProduct(object)).toBe(true);
+  });
+
+  test('there should be an ConcreteProduct class that implements the AbstractProduct', () => {});
+
+  test('the ConcreteFactory should have a method that returns something [a string for example]', () => {
+    const concreteProduct = new ConcreteProduct();
+
+    const isConcreteProduct = (object: any): object is ConcreteProduct => {
+      return 'usefulMethod' in object;
+    };
+
+    const object = {
+      usefulMethod(): any {},
+    };
+
+    expect(isConcreteProduct(object)).toBe(true);
+
+    const result = concreteProduct.usefulMethod();
+
+    expect(result).toEqual('ms1es');
   });
 });
